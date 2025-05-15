@@ -1,0 +1,10 @@
+version: rudder/0.1
+kind: events
+metadata:
+  name: myeventgroup
+spec:
+  events:
+    - id: product_viewed
+      display_name: "Product Viewed-test"
+      event_type: track
+      description: "This event is triggered every time the user views a product."
