@@ -1,0 +1,10 @@
+version: "rudder/0.1"
+kind: "events"
+metadata:
+  name: "myeventgroup"
+spec:
+  events:
+    - id: "product_viewed_1"
+      name: "Product Viewed 1"
+      event_type: "track"
+      description: "This event is triggered every time a user views a product."
