@@ -1,0 +1,102 @@
+version: "rudder/v0.1"
+kind: "custom-types"
+metadata:
+  name: "email-types"
+spec:
+  types:
+    - id: "Filter"
+      name: "Filter"
+      description: "Object containing api tracking"
+      type: "object"
+      properties: [
+        {$ref: "#/properties/api_tracking/filterId", required: true},
+        {$ref: "#/properties/api_tracking/filterItemId", required: false},
+       
+      ]
+
+    - id: "ConsenManagement"
+      name: "Consent_object"
+      description: "Object containing user consent"
+      type: "object"
+      properties: [
+        {$ref: "#/properties/api_tracking/hasExternalBehavioral", required: true},
+        {$ref: "#/properties/api_tracking/hasExternalTransactional", required: true},
+        {$ref: "#/properties/api_tracking/hasInternalBehavioral", required: false},
+      ]
+
+    - id: "EmailTypeList"
+      name: "EmailTypeList"
+      description: "Array of email types list"
+      type: "array"
+      config:
+        itemTypes: ["#/custom-types/email-types/EmailType"]
+
+    - id: "EmailType"
+      name: "EmailType"
+      description: "Custom type for email validation"
+      type: "string"
+      config:
+        format: "email"
+        minLength: 5
+        maxLength: 255
+        pattern: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+    - id: "isItTrue"
+      name: "IsItTrue"
+      description: "Custom type for email validation"
+      type: "boolean"
+      config:
+        enum:
+          - true
+          - false
+    - id: "ItisInteger"
+      name: "ItisInteger"
+      description: "Custom type for email validation"
+      type: "integer"
+      config:
+        enum:
+          - 1
+          - 2
+        multipleOf: 10
+        minimum: 1
+        maximum: 255
+    - id: "ItisNumber"
+      name: "ItisNumber"
+      description: "Custom type for number"
+      type: "number"
+      config:
+        enum:
+          - 1
+          - 2
+        multipleOf: 10
+        minimum: 1
+        maximum: 255
+    - id: "Page"
+      name: "Page"
+      description: "Object containing page details"
+      type: "object"
+      properties: [
+        {$ref: "#/properties/api_tracking/filters", required: true},
+        {$ref: "#/properties/api_tracking/pageNumber", required: true},
+        {$ref: "#/properties/api_tracking/name", required: false},
+      ]
+    - id: "ItisNull"
+      name: "ItisNull"
+      description: "Custom type for email validation"
+      type: "string"
+      config:
+        format: "email"
+    - id: "Ctypewitharray"
+      name: "Ctypewitharray"
+      description: "array with Custom type"
+      type: "array"
+      config:
+        itemTypes: ["#/custom-types/email-types/Filter"]
+
+    - id: "ArrawithObj"
+      name: "ArrawithObj"
+      description: "array with obj"
+      type: "array"
+      config:
+        itemTypes: ["object"]
+  
+      

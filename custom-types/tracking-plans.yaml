@@ -1,0 +1,19 @@
+version: rudder/0.1
+kind: tp
+metadata:
+  name: bol-test1
+spec:
+  id: bol-test1
+  display_name: "bol-test1"
+  description: "Tracking API Usage"
+  rules:
+    - type: event_rule
+      id: api_tracking_rule
+      event:
+        $ref: "#/events/myeventgroup/product_viewed_1"
+        allow_unplanned: true
+      properties:
+        - $ref: "#/properties/api_tracking/filters"
+          required: false
+        - $ref: "#/properties/api_tracking/itisinteger"
+          required: false 

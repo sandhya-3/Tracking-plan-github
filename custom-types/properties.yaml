@@ -1,0 +1,109 @@
+version: rudder/0.1
+kind: properties
+metadata:
+  name: api_tracking
+spec:
+  properties:
+    - id: apiMethod
+      name: "apiMethod"
+      type: string
+      description: "http method of the api called"
+      propConfig:
+        enum:
+          - GET
+          - PUT
+          - POST
+          - DELETE
+          - PATCH
+    - id: name
+      name: "name"
+      type: string
+      description: "name with rules "
+      propConfig:
+        enum:
+          - signup
+          - account
+          - POST
+         
+    - id: hasExternalBehavioral
+      name: "hasExternalBehavioral"
+      type: boolean
+      description: "http method of the api called"
+    - id: hasExternalTransactional
+      name: "hasExternalTransactional"
+      type: boolean
+      description: "hasExternalTransactional iuytr"
+    - id: hasInternalBehavioral
+      name: "hasInternalBehavioral"
+      type: boolean
+      description: "hasInternalBehavioral iuytr"
+    - id: filterId
+      name: "filterId"
+      type: string
+      description: "Identifier of the filter that is used"
+    - id: filterItemId
+      name: "filterItemId"
+      type: string
+      description: "Identifier of the filter item that is used"
+    - id: "filters"
+      name: "filters"
+      description: "Filters used on the list"
+      type: "#/custom-types/email-types/Filter"
+    - id: pageNumber
+      name: "pageNumber"
+      type: "integer"
+      description: "Identifier for the pageNumber"
+    # - id: apiPath
+    #   name: "apiPath"
+    #   type: string
+    #   description: "subpath of the api requested"
+    
+    - id: "user_email1"
+      name: "User Email1"
+      description: "User's email address using custom type"
+      type: "#/custom-types/email-types/EmailType"
+      propConfig:
+        enum:
+          - test
+          - test2
+
+    # - id: "user_email_list"
+    #   name: "User Email List"
+    #   description: "User's email address using custom type"
+    #   type: "array"
+    #   propConfig:
+    #     itemTypes: ["#/custom-types/email-types/trackingObj"]
+
+    - id: "page"
+      name: "page"
+      description: "page details"
+      type: "#/custom-types/email-types/Page"
+    
+    - id: "consent"
+      name: "consent"
+      description: "consent details"
+      type: "#/custom-types/email-types/ConsenManagement"
+
+    - id: "itisinteger"
+      name: "itisinteger"
+      description: "integer property"
+      type: "#/custom-types/email-types/ItisInteger"
+
+    - id: "itisnumber"
+      name: "itisnumber"
+      description: "number property"
+      type: "#/custom-types/email-types/ItisNumber"
+
+    - id: "ItisNull"
+      name: "ItisNull"
+      description: "null property"
+      type: "#/custom-types/email-types/ItisNull"
+
+    - id: "arrawithObj"
+      name: "arrawithObj"
+      description: "array with obj"
+      type: "array"
+      propConfig:
+        itemTypes: ["#/custom-types/email-types/ArrawithObj"]
+        minItems: 5
+        maxItems: 255
