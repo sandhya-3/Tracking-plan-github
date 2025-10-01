@@ -107,3 +107,5 @@ spec:
         itemTypes: ["#/custom-types/email-types/ArrawithObj"]
         minItems: 5
         maxItems: 255
+
+    
